@@ -8,7 +8,7 @@
 # Error code writing
 # print(Day-1 String manipulation) -- not has a string
 
-    # print("Hello world") -- indent errr
+    # print("Hello world") -- indent err
 
 ######### Input function ##########
 # input("what is your name?")
