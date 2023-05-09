@@ -49,3 +49,48 @@
 
 # print("Here is your BMI:", +  round(weight/(height ** 2), 0))
 
+##### NUMBER MANIPULATIONS AND F STRING
+# print(round(8/3))
+#if you want decimal behind coma
+# print(round(8/3, 2))
+# print(type(4/2))
+
+# score = 2
+# height = 1.8
+# isWinning = True
+# #f-String
+
+# print(f"your score is {score}, your height is {height}, you are winning is {isWinning}")
+
+###### CHALLENGE LIFE IN WEEKS
+
+#1 year = 365 days
+#1 year = 52 weeks
+#1 year = 12 months
+
+# age = input("What is your current age? ")
+
+# age_as_int = int(age)
+
+# years_remaining = 90 - age_as_int
+# days_remaining = years_remaining * 365
+# weeks_remaining = years_remaining * 52
+# months_remaining = years_remaining * 12
+
+
+# message = f"You have {days_remaining} days, {weeks_remaining} weeks, and {years_remaining} months left"
+# print(message)
+
+##### FINAL PROJECT = TIP CALCULATOR
+
+bill_input = float(input("Welcome to the tip calculator.\nWhat was the total bill? $"))
+percentage_tip_input = int(input("What percentage tip would you like to give? 10, 12, or 15? "))
+split_input = int(input("How many people to split the bill? "))
+
+
+
+total_bill = ((bill_input) * (100 + (percentage_tip_input ) ) /100)
+split_bill = total_bill / (split_input)
+
+
+print(f"Each person should pay: ${round(split_bill, 2)}")
