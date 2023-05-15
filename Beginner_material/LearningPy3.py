@@ -1,4 +1,4 @@
-#### DAY 3 (CONDITIONAL STATEMENTS, LOGICAL OPERATORS, CODE BLOCKS, ADN SCOPE)
+# DAY 3 (CONDITIONAL STATEMENTS, LOGICAL OPERATORS, CODE BLOCKS, AND SCOPE)
 
 # ============================
 # print("Welcome to the rollercoaster!")
@@ -59,8 +59,6 @@
 #     bmi_res = "Obese"
 # elif bmi_val > 35:
 #     bmi_res = "Clinically obese"
-
-
 
 
 # print(f"Your BMI is {bmi_val}, you are {bmi_res}")
@@ -144,4 +142,73 @@
 # print(f"Your final bill is: ${total_price}")
 
 # ========================
-#LOVE CALCULATOR
+# LOVE CALCULATOR
+
+# print("Welcome to the Love Calculator!")
+# name1 = input("What is your name? \n").lower()
+# name2 = input("What is her/his name? \n").lower()
+# name_combine = name1 + name2
+
+# true_count = str(name_combine.count(
+#     "t") + name_combine.count("r") + name_combine.count("u") + name_combine.count("e"))
+# love_count = str(name_combine.count(
+#     "l") + name_combine.count("o") + name_combine.count("v") + name_combine.count("e"))
+# true_love = int(true_count + love_count)
+
+# if true_love < 10 or true_love > 90:
+#     print(f"Your score is {true_love}, you go together like coke and mentos")
+# elif true_love >= 40 and true_love <= 50:
+#     print(f"Your score is {true_love}, you are alright together.")
+# else:
+#     print(f"Your score is {true_love}")
+
+
+# ==========================
+# FINAL PROJECT (ADVENTURE GAME)
+
+print('''
+*******************************************************************************
+          |                   |                  |                     |
+ _________|________________.=""_;=.______________|_____________________|_______
+|                   |  ,-"_,=""     `"=.|                  |
+|___________________|__"=._o`"-._        `"=.______________|___________________
+          |                `"=._o`"=._      _`"=._                     |
+ _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
+|                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
+|___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
+          |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
+ _________|___________| ;`-.o`"=._; ." ` '`."\` . "-._ /_______________|_______
+|                   | |o;    `"-.o`"=._``  '` " ,__.--o;   |
+|___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
+____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
+/______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
+____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
+/______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
+____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
+/______/______/______/______/______/______/______/______/______/______/_____ /
+*******************************************************************************
+''')
+print("Welcome to Treasure Island.")
+print("Your mission is to find the treasure.")
+
+direction = input(
+    'You are at a cross road. Where do you want to go? "Left" or "Right" ').lower()
+if direction == "left":
+    question2 = input(
+        'You come to a lake. There is an island in the middle of the lake. Type "wait" to wait for a boat. Type "swim" to swim across ').lower()
+    if question2 == "wait":
+        question3 = input(
+            'You arrive at the island unharmed. There is a house with 3 doors. One red, one yellow and one blue. Which door do you choose? Type "red", "yellow" or "blue" ').lower()
+        if question3 == "red":
+            print("You will burned by fire. Game over.")
+        elif question3 == "blue":
+            print("You will be eaten by beasts. Game over.")
+        elif question3 == "yellow":
+            print("Congratulations! Mission completed!!!")
+        else:
+            print("Game over.")
+    else:
+        print("Attacked by trout. Game over.")
+
+else:
+    print("Game over")
