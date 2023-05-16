@@ -117,12 +117,15 @@ scissors = '''
 '''
 
 game_images = [rock, paper, scissors]
-print(game_images[user_input])
 
 
 com_input = random.randint(0, 2)
-
-print(f"Computer choose:\n{game_images[com_input]}")
+if user_input < (len(game_images) - 1):
+    print(game_images[user_input])
+    print(f"Computer choose:\n{game_images[com_input]}")
+else:
+    print("Please input the correct value")
+# print(len(game_images))
 
 
 if user_input == com_input:
@@ -147,6 +150,3 @@ elif user_input == 2:
 
     else:
         print(f"Rock smashes scissors! \n {name_input} lose! ")
-
-else:
-    print("Please input the correct number!")
