@@ -83,11 +83,12 @@ import random
 
 # ROCK PAPER SCISSORS
 
-name_input = input("What's your namer?\n")
+name_input = input("What's your name?\n")
 
 
 user_input = int(input(
     "What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors\n"))
+
 rock = '''
     _______
 ---'   ____)
@@ -115,59 +116,37 @@ scissors = '''
 ---.__(___)
 '''
 
-if user_input == 0:
-    print(rock)
-elif user_input == 1:
-    print(
-        paper)
-elif user_input == 2:
-    print(
-        scissors
-    )
+game_images = [rock, paper, scissors]
+print(game_images[user_input])
 
 
 com_input = random.randint(0, 2)
 
-if com_input == 0:
-    print(f"Computer choose:\n{rock}")
-elif com_input == 1:
-    print(
-        f"Computer choose:\n{paper}")
-elif com_input == 2:
-    print(
-        f"Computer choose:\n{scissors}"
-    )
-
-
-def final_result():
-    if user_input == True:
-        print(f"{name_input.capitalize()} win")
-    else:
-        print(f"{name_input.capitalize()} lose")
+print(f"Computer choose:\n{game_images[com_input]}")
 
 
 if user_input == com_input:
     print(f"Both player selected same. It's a tie!")
 elif user_input == 0:
     if com_input == 2:
-        print("Rock smashes scissors! ")
-        final_result()
+        print(f"Rock smashes scissors!\n {name_input} win! ")
+
     else:
-        print("Paper covers rock! ")
-        final_result()
+        print(f"Paper covers rock! \n {name_input} lose! ")
+
 elif user_input == 1:
     if com_input == 0:
-        print("Paper covers rock! ")
-        final_result()
+        print(f"Paper covers rock! \n {name_input} win")
+
     else:
-        print("Scissors cuts paper! ")
-        final_result()
+        print(f"Scissors cuts paper! \n {name_input} lose! ")
+
 elif user_input == 2:
     if com_input == 1:
-        print("Scissors cuts paper! ")
-        final_result()
+        print(f"Scissors cuts paper! \n {name_input} win ")
+
     else:
-        print("Rock smashes scissors! ")
-        final_result()
+        print(f"Rock smashes scissors! \n {name_input} lose! ")
+
 else:
     print("Please input the correct number!")
