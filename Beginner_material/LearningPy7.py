@@ -74,13 +74,12 @@ stages = ['''
 lives = len(stages) - 1
 answer = False
 
-print(lives)
-
 
 count = -1
 word_choose = list(random.choice(word_list).lower())
 
 word_guess = (["_"] * len(word_choose))
+print(word_guess)
 
 
 while "_" in word_guess:
