@@ -1,79 +1,12 @@
 # HANGMAN PROJECT
 
-import random
-from HangmanLogo import logo
 import os
 
-word_list = ["Albania", "Andorra", "Argentina", "Armenia", "Australia",
-             "Austria", "Belarus", "Belgium", "Bolivia", "Botswana",
-             "Brazil", "Bulgaria", "Cambodia", "Cameroon", "Canada",
-             "Colombia", "Croatia", "Denmark", "Dominica", "Ecuador",
-             "Estonia", "Ethiopia", "Finland", "Georgia", "Germany",
-             "Grenada", "Guatemala", "Honduras", "Hungary", "Iceland",
-             "Indonesia", "Ireland", "Jamaica", "Kazakhstan", "Kenya",
-             "Kiribati", "Kyrgyzstan", "Lithuania", "Luxembourg", "Malaysia",
-             "Maldives", "Mauritania", "Moldova", "Mongolia", "Montenegro",
-             "Mozambique", "Namibia", "Nicaragua", "Nigeria", "Pakistan",
-             "Paraguay", "Philippines", "Portugal", "Romania", "Rwanda",
-             "Slovakia", "Slovenia", "Somalia", "Suriname", "Tanzania",
-             "Thailand", "Tunisia", "Turkey", "Uganda", "Uruguay",
-             "Uzbekistan", "Venezuela", "Vietnam", "Zimbabwe"]
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
+import random
+from hangman_support.HangmanLogo import logo
+from hangman_support.word_list import word_list
+from hangman_support.stages import stages
+
 
 lives = len(stages) - 1
 def cls(): return os.system('cls')
