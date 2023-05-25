@@ -27,14 +27,13 @@ while "_" in word_guess:
     guess_input = input("What is your guess?\n").lower()
     os.system('cls' if os.name == 'nt' else 'clear')
     count += 1
-    # print(count)
+
     if count > 1 and guess_input in previous_choose:
         print("Input must be different from the previous input")
         print(stages[lives])
         print(' '.join(map(str, word_guess)))
         continue
 
-    # print(previous_choose)
     previous_choose += guess_input
     for i in range(len(word_choose)):
         if guess_input == word_choose[i]:
