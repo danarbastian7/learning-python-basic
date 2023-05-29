@@ -80,6 +80,7 @@
 
 # =========================
 # FINAL PROJECT CAESAR CIPHER
+import math
 from caesar_chiper_support.art import logo
 
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
@@ -134,27 +135,33 @@ shift = int(input("Type the shift number:\n"))
 
 def cipher_text(t, s, d):
     new_words = ""
+
     if d == "1":
         for char in t:
+            new_i = 0
             if char in alphabet:
                 index = alphabet.index(char)
-                index += s
-                if index > 25:
-                    index = index - 26
-                    new_words += alphabet[index]
-                else:
-                    new_words += alphabet[index]
+                new_i = index + s
+
+                print(index)
+                while new_i > 25:
+                    new_i -= 26
+                    break
+
+                print(new_i)
+                new_words += alphabet[new_i]
+
         print(f"The encoded text is {new_words}")
+        # print(alphabet[new_i])
     elif d == "2":
         for char in t:
+            new_i = 0
             if char in alphabet:
                 index = alphabet.index(char)
-                index -= s
-                if index < 0:
-                    index = index + 26
-                    new_words += alphabet[index]
-                else:
-                    new_words += alphabet[index]
+                # new_i = index + s
+                print(index)
+
+                # new_words += new_alphabet[index]
         print(f"The decoded text is {new_words}")
     else:
         print("Please input the correct input.")
