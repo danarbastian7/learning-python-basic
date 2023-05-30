@@ -87,9 +87,6 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
             'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 print(logo)
-direction = input("Type 1 to encrypt, type 2 to decrypt:\n")
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
 
 
 # def encrypt(t, s):
@@ -136,35 +133,52 @@ shift = int(input("Type the shift number:\n"))
 def cipher_text(t, s, d):
     new_words = ""
 
-    if d == "1":
-        for char in t:
-            new_i = 0
-            if char in alphabet:
+    for char in t:
+        if char in alphabet:
+            if d == "1":
+                new_i = 0
+
                 index = alphabet.index(char)
                 new_i = index + s
 
-                print(index)
                 while new_i > 25:
                     new_i -= 26
-                    break
-
-                print(new_i)
+                    continue
                 new_words += alphabet[new_i]
 
-        print(f"The encoded text is {new_words}")
-        # print(alphabet[new_i])
-    elif d == "2":
-        for char in t:
-            new_i = 0
-            if char in alphabet:
-                index = alphabet.index(char)
-                # new_i = index + s
-                print(index)
+            elif d == "2":
+                new_i = 0
 
-                # new_words += new_alphabet[index]
+                index = alphabet.index(char)
+                new_i = index - s
+                while new_i < 0:
+                    new_i += 26
+                    continue
+                new_words += alphabet[new_i]
+
+        else:
+            new_words += char
+
+    if d == "1":
+        print(f"The encoded text is {new_words}")
+    elif d == "2":
         print(f"The decoded text is {new_words}")
     else:
         print("Please input the correct input.")
 
 
-cipher_text(t=text, s=shift, d=direction)
+def do_cipher():
+    while True:
+        direction = input("Type 1 to encrypt, type 2 to decrypt:\n")
+        text = input("Type your message:\n").lower()
+        shift = int(input("Type the shift number:\n"))
+        cipher = cipher_text(t=text, s=shift, d=direction)
+        restart_choice = input("Do you want to restart the program? (y/n) ")
+        if restart_choice == "y":
+            continue
+        else:
+            print("Goodbye")
+            break
+
+
+do_cipher()
