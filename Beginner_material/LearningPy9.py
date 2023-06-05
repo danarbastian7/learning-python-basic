@@ -102,20 +102,20 @@ def blind_auction():
         data_input["name"] = name_input
         data_input["bid_input"] = bid_input
         bid_data.append(data_input)
-        ask_option = input("Is there anyone to join the bid? (y/n) ")
+        ask_option = input("Are there any other bidders? (y/n) ")
         if ask_option == "y":
             os.system('cls' if os.name == 'nt' else 'clear')
             continue
         else:
             max_bid = 0
-            bidde_name = ""
+            bidder_name = ""
             for key in bid_data:
                 bid = int(key["bid_input"])
                 if bid > max_bid:
                     max_bid = bid
-                    bidde_name = key["name"]
+                    bidder_name = key["name"]
 
-            print(f"The winner this bidding is {bidde_name} with ${max_bid}")
+            print(f"The winner this bidding is {bidder_name} with ${max_bid}")
             break
 
 
