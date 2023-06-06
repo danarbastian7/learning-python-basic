@@ -178,6 +178,7 @@ def calculator():
 
         if input(f"Type 'y' to continue calculating with {answer}, or type 'n' to start a new calculation: ") == 'y':
             num1 = answer
+            continue
         else:
             should_continue = False
             os.system('cls' if os.name == 'nt' else 'clear')
@@ -185,7 +186,3 @@ def calculator():
 
 
 calculator()
-
-# if restart_or_not != "y":
-
-#     should_restart = True
