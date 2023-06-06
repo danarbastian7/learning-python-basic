@@ -61,6 +61,12 @@
 
 # CALCULATE PROGRAM =========================
 # This function adds two numbers
+
+from calc_support.logo import logo
+import os
+def cls(): return os.system('cls')
+
+
 def add(x, y):
     return x + y
 
@@ -83,60 +89,103 @@ def divide(x, y):
     return x / y
 
 
-print("+ \n-\n*\n/ ")
-
-
 should_restart = True
-num1 = int(input("What's the first number? "))
-result = num1
-result2 = 0
-is_first = True
-while True:
 
-    operation_choose = input("Pick an operation: ")
-    if operation_choose in ('+', "-", "*", "/"):
-        num2 = int(input("What's the next number? "))
-        if operation_choose == "+":
-            result2 = result
-            result = add(result, num2)
-            if is_first == True:
-                print(f"{num1} + {num2} = {result}")
-                is_first = False
-            else:
-                print(f"{result2} + {num2} = {result}")
-        elif operation_choose == "-":
-            result2 = result
-            result = subtract(result, num2)
-            if is_first == True:
-                print(f"{num1} - {num2} = {result}")
-                is_first = False
-            else:
-                print(f"{result2} - {num2} = {result}")
-        elif operation_choose == "*":
-            result2 = result
-            result = multiply(result, num2)
-            if is_first == True:
-                print(f"{num1} * {num2} = {result}")
-                is_first = False
-            else:
-                print(f"{result2} * {num2} = {result}")
-        elif operation_choose == "/":
-            result2 = result
-            result = divide(result, num2)
-            if is_first == True:
-                print(f"{num1} / {num2} = {result}")
-                is_first = False
-            else:
-                print(f"{result2} / {num2} = {result}")
+# while should_restart == True:
+#     os.system('cls' if os.name == 'nt' else 'clear')
+#     print(logo)
 
-        next_or_not = input(
-            f'Type "y" to continue calculation with {result}, or type "n" to start a new calculation: ')
-        if next_or_not == "y":
-            continue
-        elif next_or_not == "n":
-            break
-    else:
-        print("Invalid input")
+#     num1 = int(input("What's the first number? "))
+#     print("+ \n-\n*\n/ ")
+#     result = num1
+#     result2 = 0
+#     is_first = True
+#     while True:
+
+#         operation_choose = input("Pick an operation: ")
+#         if operation_choose in ('+', "-", "*", "/"):
+#             num2 = int(input("What's the next number? "))
+#             if operation_choose == "+":
+#                 result2 = result
+#                 result = add(result, num2)
+#                 if is_first == True:
+#                     print(f"{num1} + {num2} = {result}")
+#                     is_first = False
+#                 else:
+#                     print(f"{result2} + {num2} = {result}")
+#             elif operation_choose == "-":
+#                 result2 = result
+#                 result = subtract(result, num2)
+#                 if is_first == True:
+#                     print(f"{num1} - {num2} = {result}")
+#                     is_first = False
+#                 else:
+#                     print(f"{result2} - {num2} = {result}")
+#             elif operation_choose == "*":
+#                 result2 = result
+#                 result = multiply(result, num2)
+#                 if is_first == True:
+#                     print(f"{num1} * {num2} = {result}")
+#                     is_first = False
+#                 else:
+#                     print(f"{result2} * {num2} = {result}")
+#             elif operation_choose == "/":
+#                 result2 = result
+#                 result = divide(result, num2)
+#                 if is_first == True:
+#                     print(f"{num1} / {num2} = {result}")
+#                     is_first = False
+#                 else:
+#                     print(f"{result2} / {num2} = {result}")
+
+#         else:
+#             print("Invalid input")
+#         restart_or_not = input(
+#             f'Type "y" to continue calculation with {result}, or type "n" to start a new calculation: ')
+#         if restart_or_not != "y":
+#             should_restart = False
+#             break
+
+#     if restart_or_not != "y":
+
+#         should_restart = True
 
 
-# calculate_program()
+# OR USING NESTED DICTIONARY
+operations = {
+    "+": add,
+    "-": subtract,
+    "*": multiply,
+    "/": divide,
+
+}
+
+
+def calculator():
+    print(logo)
+
+    num1 = float(input("What's the first number?: "))
+    for symbol in operations:
+        print(symbol)
+    should_continue = True
+
+    while should_continue:
+        operation_symbol = input("Pick an operation: ")
+        num2 = float(input("What's the next number?: "))
+        calculation_function = operations[operation_symbol]
+        answer = calculation_function(num1, num2)
+        print(f"{num1} {operation_symbol} {num2} = {answer}")
+
+        if input(f"Type 'y' to continue calculating with {answer}, or type 'n' to start a new calculation: ") == 'y':
+            num1 = answer
+        else:
+            should_continue = False
+            os.system('cls' if os.name == 'nt' else 'clear')
+            calculator()
+
+
+calculator()
+
+# if restart_or_not != "y":
+
+#     should_restart = True
