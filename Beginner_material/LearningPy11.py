@@ -1,7 +1,7 @@
 # BLACKJACK / 21 CAPSTONE PROJECT
 import random
 from random import randint
-from blackjack_support.blackjack_function import card_value, deal_cards, final_result, card_decks
+from blackjack_support.blackjack_function import card_value, deal_cards, final_result
 from blackjack_support.logo import logo
 import os
 def cls(): return os.system('cls')
@@ -22,7 +22,6 @@ while play_again == 'y':
         user_cards.append(deal_cards())
         dealer_cards.append(deal_cards())
 
-    # Total
     user_total = 0
     for val in user_cards:
         user_total += (card_value(val))
@@ -32,11 +31,20 @@ while play_again == 'y':
 
     if user_total == 21:
         print("You Win, Blackjack! 😃")
+        print(
+            f"Your final hand: {user_cards}, final score: {user_total}")
+        print(
+            f"Computer's final hand: {dealer_cards}, final score: {dealer_total}")
         play_again = input("\nWould you like to continue? (y/n): ")
         break
     elif dealer_total == 21:
         print("Lose, opponent has Blackjack 😱!")
+        print(
+            f"Your final hand: {user_cards}, final score: {user_total}")
+        print(
+            f"Computer's final hand: {dealer_cards}, final score: {dealer_total}")
         play_again = input("\nWould you like to continue? (y/n): ")
+
         break
     if play_again != 'y':
         break

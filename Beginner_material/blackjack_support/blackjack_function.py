@@ -45,6 +45,7 @@ def deal_cards():
 
 
 def final_result(dealer_total, user_total):
+    """Final conclusion of User and Dealer Card"""
     if dealer_total == 21 and user_total == 21:
         return "Push! It's a tie. 🧐"
     elif dealer_total == 21:
