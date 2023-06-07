@@ -7,10 +7,6 @@ import os
 def cls(): return os.system('cls')
 
 
-def remove_card(deck, card):
-    return deck.remove(card)
-
-
 play_again = 'y'
 
 while play_again == 'y':
