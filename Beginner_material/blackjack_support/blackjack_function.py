@@ -48,10 +48,10 @@ def final_result(dealer_total, user_total):
     """Final conclusion of User and Dealer Card"""
     if dealer_total == 21 and user_total == 21:
         return "Push! It's a tie. 🧐"
-    elif dealer_total == 21:
-        return "Dealer wins with a Blackjack! 🤬"
-    elif user_total == 21:
-        return "You win with a Blackjack! 🤑"
+    # elif dealer_total == 21:
+    #     return "Dealer wins with a Blackjack! 🤬"
+    # elif user_total == 21:
+    #     return "You win with a Blackjack! 🤑"
     elif dealer_total > 21:
         return "Dealer busts. You win! 😎"
     elif user_total > 21:
@@ -64,6 +64,13 @@ def final_result(dealer_total, user_total):
         return "Push! It's a tie. 😶‍🌫️"
 
 
-def ask_to_play_again():
-    play_again = input("\nWould you like to continue? (y/n): ")
-    return play_again == "y"
+# def check_blackjack(a, x, b, y, ):
+#     if x == 21:
+#         print("You Win, Blackjack! 😃")
+#     elif y == 21:
+#         print("Lose, opponent has Blackjack 😱!")
+#     print(f"Your final hand: {a}, final score: {x}")
+#     print(f"Computer's final hand: {b}, final score: {y}")
+
+#     play_again = input("\nWould you like to continue? (y/n): ")
+#     return play_again
