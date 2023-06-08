@@ -71,7 +71,6 @@ import random
 from guess_number_support.guess_number_function import guess, guess_remain, asking_user, ask_to_play_again, search_dif
 n = 100
 n_output = []
-n_input = 0
 
 
 play_on = True
