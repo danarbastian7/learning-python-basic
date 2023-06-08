@@ -72,8 +72,6 @@ from guess_number_support.guess_number_function import guess, guess_remain, aski
 n = 100
 n_output = []
 n_input = 0
-guess_input = 0
-guess_attempt = 0
 
 
 play_on = True
