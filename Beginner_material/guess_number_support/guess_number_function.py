@@ -21,11 +21,18 @@ def asking_user():
 
 
 def ask_to_play_again():
-    play_again = input("Do you want to play again? (y/n)")
+    play_again = input("Do you want to play again? (y/n)\n")
     if play_again == "y":
         return True
+    elif play_again == "n":
+        return False
     else:
-        False
+        while True:
+            play_again = input("Invalid input. Please enter 'y' or 'n'.\n")
+            if play_again == "y":
+                return True
+            elif play_again == "n":
+                return False
 
 
 def search_dif(x, y):

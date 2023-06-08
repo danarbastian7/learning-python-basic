@@ -90,7 +90,7 @@ while play_on == True:
         if guess_attempt > 0:
 
             answer = asking_user()
-
+            print(random_num)
             if asking_user:
                 guess_attempt = guess_remain(guess=guess_attempt)
                 difference = search_dif(answer, random_num)
@@ -108,7 +108,7 @@ while play_on == True:
         else:
             print("You lose")
             attempt = False
-    play_again = ask_to_play_again()
-    if play_on != play_again:
-        print("Thank you for playing!")
-        break
+    play_on = ask_to_play_again()
+    # if play_on != True
+    #     print("Thank you for playing!")
+    #     break
