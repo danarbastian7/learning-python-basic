@@ -7,6 +7,7 @@ def cls(): return os.system('cls')
 
 
 def compare_data(a, b):
+    """Use if statement to compare the data"""
     while True:
         answer = input("Who has more followers? Type 'A' or 'B'\n").lower()
         if answer == 'a':
@@ -25,7 +26,9 @@ def compare_data(a, b):
 
 play_on = True
 final_score = 0
+os.system('cls' if os.name == 'nt' else 'clear')
 while play_on:
+
     a_figure = random.choice(data)
     data_without_a = [figure for figure in data if figure != a_figure]
     b_figure = random.choice(data_without_a)
